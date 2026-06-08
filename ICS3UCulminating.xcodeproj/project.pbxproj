@@ -9,22 +9,28 @@
 /* Begin PBXBuildFile section */
 		970FD5842FCE09A800B5852C /* ICS3UCulminatingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FD5832FCE09A800B5852C /* ICS3UCulminatingApp.swift */; };
 		970FD5862FCE09A800B5852C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970FD5852FCE09A800B5852C /* Assets.xcassets */; };
-		970FD5892FCE09A800B5852C /* House.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FD5882FCE09A800B5852C /* House.swift */; };
-		970FD58C2FCE09A800B5852C /* HouseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FD58B2FCE09A800B5852C /* HouseListViewModel.swift */; };
-		970FD58F2FCE09A800B5852C /* HousesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FD58E2FCE09A800B5852C /* HousesListView.swift */; };
-		970FD5912FCE09A800B5852C /* HouseItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970FD5902FCE09A800B5852C /* HouseItemView.swift */; };
 		970FD5932FCE09A800B5852C /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 970FD5922FCE09A800B5852C /* RELEASE.md */; };
+		975A7D1A2FD101360067E2E7 /* DecisionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D192FD101360067E2E7 /* DecisionNode.swift */; };
+		975A7D1C2FD101360067E2E7 /* SecretObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1B2FD101360067E2E7 /* SecretObject.swift */; };
+		975A7D1E2FD1014B0067E2E7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1D2FD1014B0067E2E7 /* GameViewModel.swift */; };
+		975A7D202FD1015C0067E2E7 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1F2FD1015C0067E2E7 /* MainMenuView.swift */; };
+		975A7D222FD1015C0067E2E7 /* AIQuestionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */; };
+		975A7D242FD1015C0067E2E7 /* UserQuestionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */; };
+		975A7D262FD1015C0067E2E7 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D252FD1015C0067E2E7 /* LearningView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		970FD5802FCE09A800B5852C /* ICS3UCulminating.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICS3UCulminating.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970FD5832FCE09A800B5852C /* ICS3UCulminatingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICS3UCulminatingApp.swift; sourceTree = "<group>"; };
 		970FD5852FCE09A800B5852C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		970FD5882FCE09A800B5852C /* House.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = House.swift; sourceTree = "<group>"; };
-		970FD58B2FCE09A800B5852C /* HouseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseListViewModel.swift; sourceTree = "<group>"; };
-		970FD58E2FCE09A800B5852C /* HousesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HousesListView.swift; sourceTree = "<group>"; };
-		970FD5902FCE09A800B5852C /* HouseItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseItemView.swift; sourceTree = "<group>"; };
 		970FD5922FCE09A800B5852C /* RELEASE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
+		975A7D192FD101360067E2E7 /* DecisionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionNode.swift; sourceTree = "<group>"; };
+		975A7D1B2FD101360067E2E7 /* SecretObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretObject.swift; sourceTree = "<group>"; };
+		975A7D1D2FD1014B0067E2E7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		975A7D1F2FD1015C0067E2E7 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIQuestionerView.swift; sourceTree = "<group>"; };
+		975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionerView.swift; sourceTree = "<group>"; };
+		975A7D252FD1015C0067E2E7 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +76,8 @@
 		970FD5872FCE09A800B5852C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				970FD5882FCE09A800B5852C /* House.swift */,
+				975A7D192FD101360067E2E7 /* DecisionNode.swift */,
+				975A7D1B2FD101360067E2E7 /* SecretObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -78,7 +85,7 @@
 		970FD58A2FCE09A800B5852C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				970FD58B2FCE09A800B5852C /* HouseListViewModel.swift */,
+				975A7D1D2FD1014B0067E2E7 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -86,8 +93,10 @@
 		970FD58D2FCE09A800B5852C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				970FD58E2FCE09A800B5852C /* HousesListView.swift */,
-				970FD5902FCE09A800B5852C /* HouseItemView.swift */,
+				975A7D1F2FD1015C0067E2E7 /* MainMenuView.swift */,
+				975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */,
+				975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */,
+				975A7D252FD1015C0067E2E7 /* LearningView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,11 +174,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				970FD5912FCE09A800B5852C /* HouseItemView.swift in Sources */,
-				970FD5892FCE09A800B5852C /* House.swift in Sources */,
-				970FD58F2FCE09A800B5852C /* HousesListView.swift in Sources */,
-				970FD58C2FCE09A800B5852C /* HouseListViewModel.swift in Sources */,
+				975A7D262FD1015C0067E2E7 /* LearningView.swift in Sources */,
+				975A7D202FD1015C0067E2E7 /* MainMenuView.swift in Sources */,
+				975A7D242FD1015C0067E2E7 /* UserQuestionerView.swift in Sources */,
+				975A7D222FD1015C0067E2E7 /* AIQuestionerView.swift in Sources */,
+				975A7D1E2FD1014B0067E2E7 /* GameViewModel.swift in Sources */,
 				970FD5842FCE09A800B5852C /* ICS3UCulminatingApp.swift in Sources */,
+				975A7D1A2FD101360067E2E7 /* DecisionNode.swift in Sources */,
+				975A7D1C2FD101360067E2E7 /* SecretObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +212,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 4UG443984D;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -211,15 +226,19 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.on.lcs.ICS3UCulminating;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -246,13 +265,16 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
