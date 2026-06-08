@@ -25,9 +25,9 @@ struct UserQuestionerView: View {
             } else {
                 List {
                     Section("Ask a Question") {
-                        ForEach(Array(QuestionBank.questions.keys).sorted(), id: \.self) { question in
-                            Button(question) {
-                                viewModel.askUserQuestion(question)
+                        ForEach(viewModel.allQuestions) { questionNode in
+                            Button(questionNode.text) {
+                                viewModel.askUserQuestion(questionNode)
                             }
                             .foregroundColor(.primary)
                         }

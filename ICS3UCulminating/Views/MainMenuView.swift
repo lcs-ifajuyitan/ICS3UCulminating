@@ -28,6 +28,12 @@ struct MainMenuView: View {
                     } label: {
                         MenuButton(title: "You Guess", subtitle: "Try to guess my secret object", color: .green)
                     }
+                    
+                    NavigationLink {
+                        KnowledgeBaseView(viewModel: viewModel)
+                    } label: {
+                        MenuButton(title: "Knowledge Base", subtitle: "View and edit what I've learned", color: .purple)
+                    }
                 }
                 .padding(.horizontal)
                 

@@ -11,12 +11,12 @@
 		970FD5862FCE09A800B5852C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 970FD5852FCE09A800B5852C /* Assets.xcassets */; };
 		970FD5932FCE09A800B5852C /* RELEASE.md in Resources */ = {isa = PBXBuildFile; fileRef = 970FD5922FCE09A800B5852C /* RELEASE.md */; };
 		975A7D1A2FD101360067E2E7 /* DecisionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D192FD101360067E2E7 /* DecisionNode.swift */; };
-		975A7D1C2FD101360067E2E7 /* SecretObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1B2FD101360067E2E7 /* SecretObject.swift */; };
 		975A7D1E2FD1014B0067E2E7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1D2FD1014B0067E2E7 /* GameViewModel.swift */; };
 		975A7D202FD1015C0067E2E7 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D1F2FD1015C0067E2E7 /* MainMenuView.swift */; };
 		975A7D222FD1015C0067E2E7 /* AIQuestionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */; };
 		975A7D242FD1015C0067E2E7 /* UserQuestionerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */; };
 		975A7D262FD1015C0067E2E7 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975A7D252FD1015C0067E2E7 /* LearningView.swift */; };
+		97CACFE82FD7739000E2A66C /* KnowledgeBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CACFE72FD7738F00E2A66C /* KnowledgeBaseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +25,12 @@
 		970FD5852FCE09A800B5852C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		970FD5922FCE09A800B5852C /* RELEASE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		975A7D192FD101360067E2E7 /* DecisionNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionNode.swift; sourceTree = "<group>"; };
-		975A7D1B2FD101360067E2E7 /* SecretObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretObject.swift; sourceTree = "<group>"; };
 		975A7D1D2FD1014B0067E2E7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		975A7D1F2FD1015C0067E2E7 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIQuestionerView.swift; sourceTree = "<group>"; };
 		975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionerView.swift; sourceTree = "<group>"; };
 		975A7D252FD1015C0067E2E7 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
+		97CACFE72FD7738F00E2A66C /* KnowledgeBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeBaseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				975A7D192FD101360067E2E7 /* DecisionNode.swift */,
-				975A7D1B2FD101360067E2E7 /* SecretObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,6 +96,7 @@
 				975A7D212FD1015C0067E2E7 /* AIQuestionerView.swift */,
 				975A7D232FD1015C0067E2E7 /* UserQuestionerView.swift */,
 				975A7D252FD1015C0067E2E7 /* LearningView.swift */,
+				97CACFE72FD7738F00E2A66C /* KnowledgeBaseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97CACFE82FD7739000E2A66C /* KnowledgeBaseView.swift in Sources */,
 				975A7D262FD1015C0067E2E7 /* LearningView.swift in Sources */,
 				975A7D202FD1015C0067E2E7 /* MainMenuView.swift in Sources */,
 				975A7D242FD1015C0067E2E7 /* UserQuestionerView.swift in Sources */,
@@ -181,7 +182,6 @@
 				975A7D1E2FD1014B0067E2E7 /* GameViewModel.swift in Sources */,
 				970FD5842FCE09A800B5852C /* ICS3UCulminatingApp.swift in Sources */,
 				975A7D1A2FD101360067E2E7 /* DecisionNode.swift in Sources */,
-				975A7D1C2FD101360067E2E7 /* SecretObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
