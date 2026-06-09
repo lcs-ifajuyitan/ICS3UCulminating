@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftUI
 
 struct HistoryEntry: Identifiable {
     let id = UUID()
@@ -53,6 +54,7 @@ class GameViewModel {
     
     // MARK: Tree Traversal Helpers
     
+    /// Recurse through the tree to find all leaf nodes (objects).
     private func findAllLeaves(from node: DecisionNode) -> [DecisionNode] {
         if node.isGuess {
             return [node]
@@ -68,6 +70,7 @@ class GameViewModel {
         return leaves
     }
     
+    /// Recurse through the tree to find all question nodes.
     private func findAllQuestions(from node: DecisionNode) -> [DecisionNode] {
         if node.isGuess {
             return []
@@ -93,6 +96,8 @@ class GameViewModel {
         return uniqueQuestions
     }
     
+    /// Determines if a specific object node exists anywhere within the subtree of another node.
+    /// This is used to determine 'Yes' or 'No' answers in User Mode.
     private func isObject(_ object: DecisionNode, inSubtreeOf node: DecisionNode) -> Bool {
         if node.id == object.id {
             return true
@@ -116,27 +121,40 @@ class GameViewModel {
     
     // MARK: AI Mode Logic
     
+    /// Moves the AI to the 'yes' branch of the current decision node.
+    /// If the node is a leaf, it triggers the game over state with a success message.
     func answerYes() {
-        if let nextNode = currentNode.yesChild {
-            history.append(currentNode)
-            currentNode = nextNode
-        } else {
-            // It was a guess and it was correct!
-            isGameOver = true
-            gameMessage = "I guessed it! I am so smart."
+        withAnimation {
+            if let nextNode = currentNode.yesChild {
+                history.append(currentNode)
+                currentNode = nextNode
+            } else {
+                // It was a guess and it was correct!
+                isGameOver = true
+                gameMessage = "I guessed it! I am so smart."
+            }
         }
     }
     
+    /// Moves the AI to the 'no' branch of the current decision node.
+    /// If the node is a leaf, it triggers the 'give up' message to initiate learning.
     func answerNo() {
-        if let nextNode = currentNode.noChild {
-            history.append(currentNode)
-            currentNode = nextNode
-        } else {
-            // It was a guess and it was wrong. Need to learn.
-            gameMessage = "I give up. What was it?"
+        withAnimation {
+            if let nextNode = currentNode.noChild {
+                history.append(currentNode)
+                currentNode = nextNode
+            } else {
+                // It was a guess and it was wrong. Need to learn.
+                gameMessage = "I give up. What was it?"
+            }
         }
     }
     
+    /// Updates the tree with a new object and a question to distinguish it from the current guess.
+    /// - Parameters:
+    ///   - name: The name of the new object.
+    ///   - distinguishingQuestion: A question that separates the new object from the old one.
+    ///   - correctAnswerForNewObject: Whether the answer to the new question is 'Yes' for the new object.
     func learnNewObject(name: String, distinguishingQuestion: String, correctAnswerForNewObject: Bool) {
         let newNode = DecisionNode(text: name)
         let oldNode = DecisionNode(text: currentNode.text)
@@ -154,18 +172,22 @@ class GameViewModel {
         resetGame()
     }
     
+    /// Resets the game state to the root of the tree and clears user mode history.
     func resetGame() {
-        currentNode = rootNode
-        history = []
-        isGameOver = false
-        gameMessage = ""
-        userQuestionCount = 0
-        userModeHistory = []
-        selectRandomSecretObject()
+        withAnimation {
+            currentNode = rootNode
+            history = []
+            isGameOver = false
+            gameMessage = ""
+            userQuestionCount = 0
+            userModeHistory = []
+            selectRandomSecretObject()
+        }
     }
     
     // MARK: User Mode Logic
     
+    /// Randomly selects an object from the tree for the user to guess.
     func selectRandomSecretObject() {
         let objects = allObjects
         if objects.isEmpty == false {
@@ -174,48 +196,59 @@ class GameViewModel {
         }
     }
     
+    /// Evaluates a user's question against the current secret object.
+    /// - Parameter questionNode: The node representing the question asked.
     func askUserQuestion(_ questionNode: DecisionNode) {
         guard let secret = secretObject, userQuestionCount < 20 else { return }
         
-        userQuestionCount += 1
-        
-        // Find if the secret object is in the 'yes' branch of this question
-        let answer: String
-        if let yesChild = questionNode.yesChild, isObject(secret, inSubtreeOf: yesChild) {
-            answer = "Yes"
-        } else {
-            answer = "No"
-        }
-        
-        userModeHistory.append(HistoryEntry(text: "\(questionNode.text) - \(answer)"))
-        
-        if userQuestionCount >= 20 {
-            isGameOver = true
-            gameMessage = "Game Over! You've used all 20 questions. The object was \(secret.text)."
+        withAnimation {
+            userQuestionCount += 1
+            
+            // Find if the secret object is in the 'yes' branch of this question
+            let answer: String
+            if let yesChild = questionNode.yesChild, isObject(secret, inSubtreeOf: yesChild) {
+                answer = "Yes"
+            } else {
+                answer = "No"
+            }
+            
+            userModeHistory.append(HistoryEntry(text: "\(questionNode.text) - \(answer)"))
+            
+            if userQuestionCount >= 20 {
+                isGameOver = true
+                gameMessage = "Game Over! You've used all 20 questions. The object was \(secret.text)."
+            }
         }
     }
     
+    /// Checks a user's guess against the secret object name using normalized comparison.
     func makeUserGuess(_ guess: String) {
         guard let secret = secretObject else { return }
         
-        userQuestionCount += 1
-        
-        let normalizedGuess = normalize(guess)
-        let normalizedSecret = normalize(secret.text)
-        
-        if normalizedGuess == normalizedSecret {
-            isGameOver = true
-            gameMessage = "Correct! You guessed it in \(userQuestionCount) questions."
-        } else if userQuestionCount >= 20 {
-            isGameOver = true
-            gameMessage = "Wrong guess! And you're out of turns. The object was \(secret.text)."
-        } else {
-            userModeHistory.append(HistoryEntry(text: "Guess: \(guess) - No"))
+        withAnimation {
+            userQuestionCount += 1
+            
+            let normalizedGuess = normalize(guess)
+            let normalizedSecret = normalize(secret.text)
+            
+            if normalizedGuess == normalizedSecret {
+                isGameOver = true
+                gameMessage = "Correct! You guessed it in \(userQuestionCount) questions."
+            } else if userQuestionCount >= 20 {
+                isGameOver = true
+                gameMessage = "Wrong guess! And you're out of turns. The object was \(secret.text)."
+            } else {
+                userModeHistory.append(HistoryEntry(text: "Guess: \(guess) - No"))
+            }
         }
     }
     
     // MARK: Knowledge Management
     
+    /// Updates the text of a specific node in the tree.
+    /// - Parameters:
+    ///   - id: The unique ID of the node to update.
+    ///   - newText: The new text (question or object name) for the node.
     func updateNodeText(id: UUID, newText: String) {
         if let node = findNode(with: id, startingAt: rootNode) {
             node.text = newText
@@ -223,6 +256,7 @@ class GameViewModel {
         }
     }
     
+    /// Wipes the learned tree and restores the starting default tree.
     func resetKnowledge() {
         let dogNode = DecisionNode(text: "a dog")
         let catNode = DecisionNode(text: "a cat")
@@ -233,6 +267,7 @@ class GameViewModel {
         resetGame()
     }
     
+    /// Recursively searches the tree to find a node with the matching ID.
     private func findNode(with id: UUID, startingAt node: DecisionNode) -> DecisionNode? {
         if node.id == id {
             return node

@@ -5,9 +5,16 @@ import Foundation
 class DecisionNode: Codable, Identifiable {
     // MARK: - Stored properties
     
+    /// Unique identifier for the node, used for editing in the Knowledge Base.
     var id: UUID
+    
+    /// The text for the node (either a question or an object name).
     var text: String
+    
+    /// The node to move to if the answer is 'Yes'.
     var yesChild: DecisionNode?
+    
+    /// The node to move to if the answer is 'No'.
     var noChild: DecisionNode?
     
     // MARK: - Computed properties

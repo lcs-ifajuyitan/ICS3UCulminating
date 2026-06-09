@@ -36,9 +36,24 @@ struct UserQuestionerView: View {
                     if viewModel.userModeHistory.isEmpty == false {
                         Section("History") {
                             ForEach(viewModel.userModeHistory) { entry in
-                                Text(entry.text)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
+                                HStack {
+                                    if entry.text.contains(" - Yes") {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .foregroundColor(.green)
+                                    } else if entry.text.contains(" - No") {
+                                        if entry.text.hasPrefix("Guess:") {
+                                            Image(systemName: "questionmark.circle.fill")
+                                                .foregroundColor(.orange)
+                                        } else {
+                                            Image(systemName: "xmark.circle.fill")
+                                                .foregroundColor(.red)
+                                        }
+                                    }
+                                    
+                                    Text(entry.text)
+                                }
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
                             }
                         }
                     }
