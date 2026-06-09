@@ -1,6 +1,11 @@
 import Foundation
 import Observation
 
+struct HistoryEntry: Identifiable {
+    let id = UUID()
+    let text: String
+}
+
 @Observable
 class GameViewModel {
     // MARK: - Stored properties
@@ -13,7 +18,7 @@ class GameViewModel {
     // User Mode properties
     var secretObject: DecisionNode?
     var userQuestionCount: Int = 0
-    var userModeHistory: [String] = []
+    var userModeHistory: [HistoryEntry] = []
     
     // Common state
     var isGameOver: Bool = false
@@ -182,7 +187,7 @@ class GameViewModel {
             answer = "No"
         }
         
-        userModeHistory.append("\(questionNode.text) - \(answer)")
+        userModeHistory.append(HistoryEntry(text: "\(questionNode.text) - \(answer)"))
         
         if userQuestionCount >= 20 {
             isGameOver = true
@@ -205,7 +210,7 @@ class GameViewModel {
             isGameOver = true
             gameMessage = "Wrong guess! And you're out of turns. The object was \(secret.text)."
         } else {
-            userModeHistory.append("Guess: \(guess) - No")
+            userModeHistory.append(HistoryEntry(text: "Guess: \(guess) - No"))
         }
     }
     

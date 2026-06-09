@@ -35,8 +35,8 @@ struct UserQuestionerView: View {
                     
                     if viewModel.userModeHistory.isEmpty == false {
                         Section("History") {
-                            ForEach(viewModel.userModeHistory, id: \.self) { entry in
-                                Text(entry)
+                            ForEach(viewModel.userModeHistory) { entry in
+                                Text(entry.text)
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
